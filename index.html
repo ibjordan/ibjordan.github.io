@@ -52,6 +52,15 @@
         });
       },
       
+      onCancel: function (data, actions) {
+    // Show a cancel page or return to cart
+        const response = fetch('https://s0guuu7bek.execute-api.sa-east-1.amazonaws.com/dev/webhook', {
+            method: 'POST',
+            body: JSON.stringify({"tel" : "PHONE_NUMBER", "usecase":"showcase", "pago" : "cancelado"}),// string or object
+          }
+        );
+       },
+      
       onError: function(err) {
         console.log(err);
       }
